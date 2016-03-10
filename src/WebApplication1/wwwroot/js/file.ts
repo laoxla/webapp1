@@ -1,54 +1,189 @@
 ﻿
-//Create a Product class that satisfies the following requirements:
 
-//You should not be able to create a product without providing a value for the Name, Price, and UnitsInStock properties.
-//You should be able to create a product without specifying a product Description.
-//You should be able to modify the Name, Price, and UnitsInStock properties after the product is created.
+//Namespace Practice
+//Create two namespaces where one is called MyApp, and the other called MathUtility.
+//Inside of the MathUtility namespace, craete a class  called Calculator that has four methods where each methods does one of the mathematical operation, addition, substraction, multiplication, division.
+//Make sure to export the Calculator class.
+//Within the MyApp namespace, create a new instance of a Calculator class to test that it is working.
 
-class Product {
-    private _name: string;
-    private _price: string;
-    private _unitsInStock: string;
+namespace MathUtility {
 
+    export class Calculator {
 
-
-    set name(value) {
-        if (!value) {
-            throw new Error("Please put a valid name.");
+        addition(num1: number, num2: number) {
+            console.log(num1 + num2);
         }
-        this._name = value;
-    }
-    set price(value) {
-        if (!value) {
-            throw new Error("Please put a valid price.");
+
+
+        subtraction(num1: number, num2: number) {
+            console.log(num1 - num2);
         }
-        this._price = value;
-    }
 
-    set unitsInStock(value) {
-        if (!value) {
-            throw new Error("Please put a valid unitsInStock.");
+
+        division(num1: number, num2: number) {
+            console.log(num1 / num2);
         }
-        this._unitsInStock = value;
-    }
 
-    get createdProduct() {
-        return `Name: ${this._name} Price: $${this._price} Unit in stock: ${this._unitsInStock}`;
-    }
 
-    constructor(_name: string, _price: string, _unitsInStock: string, public description?: string) {
-        this.name = _name;
-        this.price = _price;
-        this.unitsInStock = _unitsInStock;
-
-        console.log(`New product has been made.`);
+        multiplication(num1: number, num2: number) {
+            console.log(num1 * num2);
+        }
 
     }
-
 }
 
-let myProduct = new Product("Plate", "26", "300");
-console.log(myProduct.createdProduct);
+    namespace Myapp {
+        
+        export  let cal = new MathUtility.Calculator();
+            
+       
+}
+
+    Myapp.cal.addition(30, 5);
+
+
+
+
+
+
+
+
+
+//class Computer {
+
+//    constructor(public price, public model ) { }
+
+//    report() {
+//        return (`Price: $${this.price}`);
+//        console.log(`Model: ${this.model}`);
+       
+//    }
+
+//}
+
+//class Apple extends Computer{
+
+//    constructor(price,  private _operatingSystem) {
+//        super (price, "Mac");
+//    }
+//    report() {
+//        super.report();
+//        console.log(`Operating System: ${this._operatingSystem}`);
+//    }
+
+//}
+
+
+//enum WindowsOS {
+//Windows10, Windows7, Windows8_1
+//}
+
+//class Windows extends Computer {
+//    constructor(price, public operatingSystem: WindowsOS) {
+//        super(price, "PC")
+//    }
+
+//    report() {
+//        super.report();
+//        console.log(`Operating System: ${this.operatingSystem}`);
+
+//    }
+//}
+//let hackintosh = new Windows(544.89, WindowsOS.Windows8_1);
+
+//console.log(hackintosh);
+
+
+
+
+
+
+
+
+//class Vehicle {
+//    constructor(public year, public make, public model) { }
+
+//    report() {
+//        console.log(`Year: ${this. year}`);
+//        console.log(`Make: ${this.make}`);
+//        console.log(`Model: ${this.model}`);
+//    }
+
+//}
+
+//class Car extends Vehicle{
+
+//    constructor(year, make, model, public doors, public type) {
+//        super(year, make, model);
+//    }
+
+//    report() {
+//        super.report();
+//        console.log(`Doors: ${this.doors}`);
+//        console.log(`Type: ${this.type}`);
+//    }
+//}
+
+//let myVehicle = new Car(2010, "Chevrolet", "Camaro", 2, "Coupe");
+//let andysVehicle = new Car(2015, "Subaru", "BRZ", 2, "Coupe");
+//myVehicle.report();
+//andysVehicle.report();
+
+
+
+
+
+
+////Create a Product class that satisfies the following requirements:
+
+////You should not be able to create a product without providing a value for the Name, Price, and UnitsInStock properties.
+////You should be able to create a product without specifying a product Description.
+////You should be able to modify the Name, Price, and UnitsInStock properties after the product is created.
+
+//class Product {
+//    private _name: string;
+//    private _price: string;
+//    private _unitsInStock: string;
+
+
+
+//    set name(value) {
+//        if (!value) {
+//            throw new Error("Please put a valid name.");
+//        }
+//        this._name = value;
+//    }
+//    set price(value) {
+//        if (!value) {
+//            throw new Error("Please put a valid price.");
+//        }
+//        this._price = value;
+//    }
+
+//    set unitsInStock(value) {
+//        if (!value) {
+//            throw new Error("Please put a valid unitsInStock.");
+//        }
+//        this._unitsInStock = value;
+//    }
+
+//    get createdProduct() {
+//        return `Name: ${this._name} Price: $${this._price} Unit in stock: ${this._unitsInStock}`;
+//    }
+
+//    constructor(_name: string, _price: string, _unitsInStock: string, public description?: string) {
+//        this.name = _name;
+//        this.price = _price;
+//        this.unitsInStock = _unitsInStock;
+
+//        console.log(`New product has been made.`);
+
+//    }
+
+//}
+
+//let myProduct = new Product("Plate", "26", "300");
+//console.log(myProduct.createdProduct);
 
 
 
